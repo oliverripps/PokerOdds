@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { CardGroup, OddsCalculator } from 'poker-odds-calculator';
+import TextField from '@material-ui/core/TextField';
 
 function Odds() {
   const player1Cards = CardGroup.fromString('Tc4c');
@@ -26,7 +27,10 @@ function Odds() {
   console.log(player2Odds);
   return (
     <div>
-      <form onSubmit={handleSubmit}></form>
+      <form onSubmit={handleSubmit}>
+        <TextField id="standard-basic" label="Player 1 Cards" />
+        <TextField id="standard-basic" label="Player 2 Cards" />
+      </form>
       <p>Player 1 odds: {player1Odds}</p>
       <p>Play 2 odds: {player2Odds}</p>
     </div>
